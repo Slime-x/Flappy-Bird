@@ -10,7 +10,11 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if not Gamemanager.game_over:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
+	if velocity.y < 0:
+				rotation_degrees = -10
+	if velocity.y > 0:
+		rotation_degrees = 10
 
 	move_and_slide()

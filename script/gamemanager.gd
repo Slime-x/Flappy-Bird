@@ -9,7 +9,7 @@ var resetting = false
 var point = 0
 var highScore = 0
 
-func _process(delta: float) -> void:
+func _process(_delta):
 	if game_over and not resetting:
 		resetting = true
 		await get_tree().create_timer(1).timeout

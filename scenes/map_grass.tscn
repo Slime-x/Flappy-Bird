@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://de6awonicecmi"]
+
+[ext_resource type="Texture2D" uid="uid://bst8e31tfi3qc" path="res://assets/SimpleStyle1.png" id="1_54ipq"]
+[ext_resource type="Script" uid="uid://b7i6n4now7lnq" path="res://script/map_grass.gd" id="1_w8x3j"]
+
+[node name="map_grass" type="Parallax2D" unique_id=434117452]
+repeat_size = Vector2(192, 0)
+repeat_times = 9
+script = ExtResource("1_w8x3j")
+
+[node name="SimpleStyle1" type="Sprite2D" parent="." unique_id=996871314]
+position = Vector2(310, 570)
+scale = Vector2(3, 4.5)
+texture = ExtResource("1_54ipq")
+region_enabled = true
+region_rect = Rect2(0, 80, 64, 16)
