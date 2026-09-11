@@ -7,7 +7,7 @@ extends Node
 
 func spawn_pipe():
 	var new_pipe = pipe_scene.instantiate()
-	new_pipe.position = Vector2(900, randi_range(0,300))
+	new_pipe.position = Vector2(700, randi_range(-150,150))
 	get_parent().get_node("pipes").add_child(new_pipe)
 
 
