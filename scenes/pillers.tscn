@@ -4,19 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://bsfs7wpel05w1" path="res://assets/PipeStyle1.png" id="2_bgtil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtct1"]
-size = Vector2(29, 118)
+size = Vector2(32, 154.4)
 
 [node name="Pillers" type="Area2D" unique_id=840317087]
-scale = Vector2(2, 2)
+scale = Vector2(2, 2.5)
 script = ExtResource("1_h56a0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=863862256]
-scale = Vector2(1, 1.5)
+position = Vector2(1, 8)
+scale = Vector2(1, 1.965)
 texture = ExtResource("2_bgtil")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1901663311]
+position = Vector2(1, 9.199997)
+shape = SubResource("RectangleShape2D_qtct1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2009846749]
+position = Vector2(0, 229.2)
+scale = Vector2(1, 1.965)
+texture = ExtResource("2_bgtil")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 80)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=269187832]
+position = Vector2(0, 228)
 shape = SubResource("RectangleShape2D_qtct1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

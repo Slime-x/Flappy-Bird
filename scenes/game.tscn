@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dr186oic4fv0f" path="res://assets/Background5.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://enka6wakk8k7" path="res://scenes/bird.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://biwkgruj8j4d5" path="res://script/pipe_spawner.gd" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://d1rb72meuorkl" path="res://scenes/pillers.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=1585108737]
@@ -16,28 +17,18 @@ texture = ExtResource("1_uwrxv")
 centered = false
 
 [node name="bird" parent="." unique_id=37561384 instance=ExtResource("2_yqjtg")]
-position = Vector2(223, 341)
+position = Vector2(200, 300)
 
-[node name="Pillers" parent="." unique_id=803904149 instance=ExtResource("3_lnu2h")]
-position = Vector2(430, 118)
+[node name="pipe_spawner" type="Node" parent="." unique_id=2000588042]
+script = ExtResource("3_lbhrr")
 
-[node name="Pillers2" parent="." unique_id=557744330 instance=ExtResource("3_lnu2h")]
-position = Vector2(430, 482)
+[node name="Timer" type="Timer" parent="pipe_spawner" unique_id=1932783109]
+wait_time = 2.0
+autostart = true
 
-[node name="Pillers3" parent="." unique_id=976377580 instance=ExtResource("3_lnu2h")]
-position = Vector2(689, 54)
+[node name="pipes" type="Node" parent="." unique_id=1089799025]
 
-[node name="Pillers4" parent="." unique_id=1033095475 instance=ExtResource("3_lnu2h")]
-position = Vector2(689, 418)
+[node name="Pillers" parent="pipes" unique_id=803904149 instance=ExtResource("3_lnu2h")]
+position = Vector2(814, 83)
 
-[node name="Pillers5" parent="." unique_id=2143056634 instance=ExtResource("3_lnu2h")]
-position = Vector2(1004, 168)
-
-[node name="Pillers6" parent="." unique_id=1991386921 instance=ExtResource("3_lnu2h")]
-position = Vector2(1004, 532)
-
-[node name="Pillers7" parent="." unique_id=726569170 instance=ExtResource("3_lnu2h")]
-position = Vector2(1375, 16)
-
-[node name="Pillers8" parent="." unique_id=58074994 instance=ExtResource("3_lnu2h")]
-position = Vector2(1375, 380)
+[connection signal="timeout" from="pipe_spawner/Timer" to="pipe_spawner" method="_on_timer_timeout"]
