@@ -12,7 +12,7 @@ var highScore = 0
 func _process(_delta):
 	if game_over and not resetting:
 		resetting = true
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		game_over = false
 		gamereset()
 		resetting = false

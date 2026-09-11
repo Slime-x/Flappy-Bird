@@ -13,8 +13,8 @@ func spawn_pipe():
 
 func spawn_grass():
 	var map = grass.instantiate()
-	map.position = Vector2(446, 0)
-	get_parent().add_child(map)
+	map.position = Vector2(989, 0)
+	get_parent().get_node("map").add_child(map)
 
 
 func _on_timer_timeout() -> void:
