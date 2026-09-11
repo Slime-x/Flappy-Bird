@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bbkwi8g1lv4g5"]
+
+[ext_resource type="Texture2D" uid="uid://dr186oic4fv0f" path="res://assets/Background5.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://enka6wakk8k7" path="res://scenes/bird.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://d1rb72meuorkl" path="res://scenes/pillers.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D" unique_id=1585108737]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=882121452]
+repeat_size = Vector2(400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=284318966]
+position = Vector2(1.1920929e-07, 1.1920929e-07)
+scale = Vector2(1.5625, 2.3437502)
+texture = ExtResource("1_uwrxv")
+centered = false
+
+[node name="bird" parent="." unique_id=37561384 instance=ExtResource("2_yqjtg")]
+position = Vector2(223, 341)
+
+[node name="Pillers" parent="." unique_id=803904149 instance=ExtResource("3_lnu2h")]
+position = Vector2(430, 118)
+
+[node name="Pillers2" parent="." unique_id=557744330 instance=ExtResource("3_lnu2h")]
+position = Vector2(430, 482)
+
+[node name="Pillers3" parent="." unique_id=976377580 instance=ExtResource("3_lnu2h")]
+position = Vector2(689, 54)
+
+[node name="Pillers4" parent="." unique_id=1033095475 instance=ExtResource("3_lnu2h")]
+position = Vector2(689, 418)
+
+[node name="Pillers5" parent="." unique_id=2143056634 instance=ExtResource("3_lnu2h")]
+position = Vector2(1004, 168)
+
+[node name="Pillers6" parent="." unique_id=1991386921 instance=ExtResource("3_lnu2h")]
+position = Vector2(1004, 532)
+
+[node name="Pillers7" parent="." unique_id=726569170 instance=ExtResource("3_lnu2h")]
+position = Vector2(1375, 16)
+
+[node name="Pillers8" parent="." unique_id=58074994 instance=ExtResource("3_lnu2h")]
+position = Vector2(1375, 380)
