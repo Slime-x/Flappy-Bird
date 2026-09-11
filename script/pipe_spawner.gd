@@ -4,7 +4,7 @@ extends Node
 @onready var pipes: Node = $"../pipes"
 
 @onready var pipe_scene = preload("res://scenes/pillers.tscn")
-@onready var grass = preload("res://scenes/map_grass.tscn")
+@onready var grass = preload("res://scenes/map.tscn")
 
 func spawn_pipe():
 	var new_pipe = pipe_scene.instantiate()
@@ -13,10 +13,9 @@ func spawn_pipe():
 
 func spawn_grass():
 	var map = grass.instantiate()
-	map.position = Vector2(700, 0)
+	map.position = Vector2(446, 0)
 	get_parent().add_child(map)
 
 
 func _on_timer_timeout() -> void:
 	spawn_pipe()
-	spawn_grass()

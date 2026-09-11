@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dr186oic4fv0f" path="res://assets/Background5.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://enka6wakk8k7" path="res://scenes/bird.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://biwkgruj8j4d5" path="res://script/pipe_spawner.gd" id="3_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://de6awonicecmi" path="res://scenes/map_grass.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://blhde4qse1eo" path="res://scenes/map.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=1585108737]
 
@@ -28,7 +28,6 @@ autostart = true
 
 [node name="pipes" type="Node" parent="." unique_id=1089799025]
 
-[node name="map_grass" parent="." unique_id=434117452 instance=ExtResource("4_lbhrr")]
-z_index = 1
+[node name="map" parent="." unique_id=1966408214 instance=ExtResource("4_lbhrr")]
 
 [connection signal="timeout" from="pipe_spawner/Timer" to="pipe_spawner" method="_on_timer_timeout"]
