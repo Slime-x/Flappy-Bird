@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bbkwi8g1lv4g5"]
+[gd_scene format=3 uid="uid://bbkwi8g1lv4g5"]
 
 [ext_resource type="Texture2D" uid="uid://mxerkmovvdoi" path="res://assets/world_tileset.png" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://dr186oic4fv0f" path="res://assets/Background5.png" id="1_uwrxv"]
@@ -139,12 +139,13 @@ texture = ExtResource("1_iywne")
 [sub_resource type="TileSet" id="TileSet_iywne"]
 sources/0 = SubResource("TileSetAtlasSource_iywne")
 
+[sub_resource type="SystemFont" id="SystemFont_gee14"]
+
 [node name="Game" type="Node2D" unique_id=1585108737]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=929585120]
 z_index = -1
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD8/wAAAAAAAAkAAAD9/wAAAAAAAAkAAAD+/wAAAAAAAAkAAAD//wAAAAAAAAkAAAAAAAAAAAAAAAkAAAABAAAAAAAAAAkAAAACAAAAAAAAAAkAAAADAAAAAAAAAAkAAAAEAAAAAAAAAAkAAAAFAAAAAAAAAAkAAAAGAAAAAAAAAAkAAAAHAAAAAAAAAAkAAAAIAAAAAAAAAAkAAAAJAAAAAAAAAAkAAAAKAAAAAAAAAAkAAAALAAAAAAAAAAkAAAAMAAAAAAAAAAkAAAANAAAAAAAAAAkAAAA=")
 tile_set = SubResource("TileSet_iywne")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=882121452]
@@ -172,5 +173,29 @@ autostart = true
 [node name="map" type="Node" parent="." unique_id=519929351]
 
 [node name="map" parent="map" unique_id=1966408214 instance=ExtResource("4_lbhrr")]
+
+[node name="Control" type="Control" parent="." unique_id=636257430]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="points" type="Label" parent="Control" unique_id=1144625822]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 10.0
+anchor_bottom = 0.87500006
+offset_left = 172.0
+offset_top = 19.0
+offset_right = -177.0
+offset_bottom = 9.999996
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(1, 0.8745098, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_gee14")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="pipe_spawner/Timer" to="pipe_spawner" method="_on_timer_timeout"]

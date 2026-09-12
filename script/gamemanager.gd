@@ -5,7 +5,6 @@ extends Node
 
 var game_over = false
 var resetting = false
-
 var point = 0
 var highScore = 0
 
@@ -29,4 +28,6 @@ func gamereset():
 	for pillers in pipes.get_children():
 		pillers.queue_free()
 	
-	
+func add_point():
+	var points = get_tree().current_scene.get_node("Control/points")
+	points.text = str(point)
