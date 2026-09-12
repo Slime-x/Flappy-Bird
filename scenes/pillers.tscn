@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://5sxnx1nuqn5i" path="res://script/pillers.gd" id="1_h56a0"]
 [ext_resource type="Texture2D" uid="uid://bsfs7wpel05w1" path="res://assets/PipeStyle1.png" id="2_bgtil"]
+[ext_resource type="AudioStream" uid="uid://gu7ks2mvrei4" path="res://assets/coin.wav" id="3_bgtil"]
+[ext_resource type="AudioStream" uid="uid://btrmtphhwu73k" path="res://assets/hurt.wav" id="4_6h7id"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtct1"]
 size = Vector2(32, 154.4)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_qtct1"]
-a = Vector2(14.5, 85.6)
-b = Vector2(14.5, 151.6)
+a = Vector2(10.5, 85.6)
+b = Vector2(10.5, 152)
 
 [node name="Pillers" type="Area2D" unique_id=840317087]
 scale = Vector2(2, 2.5)
@@ -40,6 +42,12 @@ shape = SubResource("RectangleShape2D_qtct1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1011438284]
 shape = SubResource("SegmentShape2D_qtct1")
+
+[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=976990193]
+stream = ExtResource("3_bgtil")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1824839555]
+stream = ExtResource("4_6h7id")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

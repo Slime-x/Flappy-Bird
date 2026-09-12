@@ -10,7 +10,9 @@ var highScore = 0
 
 func _process(_delta):
 	if game_over and not resetting:
+		var hurt = get_tree().current_scene.get_node("Hurt")
 		resetting = true
+		hurt.play()
 		await get_tree().create_timer(2).timeout
 		game_over = false
 		gamereset()
@@ -24,6 +26,7 @@ func gamereset():
 	if point > highScore:
 		highScore = point
 	point = 0
+	add_point()
 	print("HIGH SCORE:" + str(highScore))
 	for pillers in pipes.get_children():
 		pillers.queue_free()

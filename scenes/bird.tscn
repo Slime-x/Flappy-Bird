@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8t80nofhk7vx" path="res://script/bird.gd" id="1_3po83"]
 [ext_resource type="Texture2D" uid="uid://bcu6oq6vsmvm8" path="res://assets/AllBird1.png" id="2_hq4t0"]
+[ext_resource type="AudioStream" uid="uid://do1ekba6m4ifx" path="res://assets/jump.wav" id="3_hq4t0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twsrt"]
 atlas = ExtResource("2_hq4t0")
@@ -73,3 +74,7 @@ frame_progress = 0.6463881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1802054956]
 shape = SubResource("CircleShape2D_qtct1")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1515633002]
+stream = ExtResource("3_hq4t0")
+volume_db = -23.247

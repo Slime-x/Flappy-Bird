@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://enka6wakk8k7" path="res://scenes/bird.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://biwkgruj8j4d5" path="res://script/pipe_spawner.gd" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://blhde4qse1eo" path="res://scenes/map.tscn" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://dqed5qrut7uiy" path="res://assets/PixelOperator-Bold.ttf" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://btrmtphhwu73k" path="res://assets/hurt.wav" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("1_iywne")
@@ -139,7 +141,7 @@ texture = ExtResource("1_iywne")
 [sub_resource type="TileSet" id="TileSet_iywne"]
 sources/0 = SubResource("TileSetAtlasSource_iywne")
 
-[sub_resource type="SystemFont" id="SystemFont_gee14"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=1585108737]
 
@@ -175,13 +177,13 @@ autostart = true
 [node name="map" parent="map" unique_id=1966408214 instance=ExtResource("4_lbhrr")]
 
 [node name="Control" type="Control" parent="." unique_id=636257430]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="points" type="Label" parent="Control" unique_id=1144625822]
-z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 10.0
@@ -191,11 +193,34 @@ offset_top = 19.0
 offset_right = -177.0
 offset_bottom = 9.999996
 offset_transform_enabled = true
-theme_override_colors/font_color = Color(1, 0.8745098, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_gee14")
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxTexture_p57ef")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="highscore" type="Label" parent="Control" unique_id=518210971]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 10.016001
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 4.0
+offset_right = -0.64001465
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 24
+text = "Highscore:"
+uppercase = true
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1355008471]
+stream = ExtResource("7_u5sy4")
 
 [connection signal="timeout" from="pipe_spawner/Timer" to="pipe_spawner" method="_on_timer_timeout"]

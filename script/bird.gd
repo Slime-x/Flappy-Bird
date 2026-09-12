@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	if not Gamemanager.game_over:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
+			$Jump.play()
 	if velocity.y < 0:
 				rotation_degrees = -10
 	if velocity.y > 0:

@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 		spawning = false
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	Gamemanager.game_over = true
