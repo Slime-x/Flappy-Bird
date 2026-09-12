@@ -21,13 +21,14 @@ func _process(_delta):
 func gamereset():
 	var bird = get_tree().current_scene.get_node("bird")
 	var pipes = get_tree().current_scene.get_node("pipes")
+	var hs = get_tree().current_scene.get_node("Control/highscore")
 	bird.position = bird.start_position
 	bird.velocity.y = 0
 	if point > highScore:
 		highScore = point
+		hs.text = "High score: " + str(point)
 	point = 0
 	add_point()
-	print("HIGH SCORE:" + str(highScore))
 	for pillers in pipes.get_children():
 		pillers.queue_free()
 	
