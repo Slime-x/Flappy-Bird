@@ -10,37 +10,35 @@ var highScore = 0
 var start_menu = true
 var in_game = false
 var game_over_menu = false
-var game_over_menu_ = false
+var can_restart = false
 
-func _input(jump):
+func _input(_jump):
 	var UI = get_tree().current_scene.get_node("UI")
 	if Input.is_action_just_pressed("jump"):
 		start_menu = false
+		in_game = true
 		UI.in_game()
 		in_game = true
-	if game_over and resetting:
-		if game_over_menu_:
-			await get_tree().create_timer(2).timeout
-			game_over_menu_ = false
-			if Input.is_action_just_pressed("jump"):
-				game_over = false
-				UI.respawn()
-				gamereset()
-				print("dyaum")
-				resetting = false
 		
+	if game_over and can_restart and Input.is_action_just_pressed("jump"):
+			game_over = false
+			resetting = false
+			can_restart = false
+			UI.respawn()
+			gamereset()
+
+
 func _process(_delta):
-	
 	if game_over and not resetting:
 		var UI = get_tree().current_scene.get_node("UI")
 		var hurt = get_tree().current_scene.get_node("Hurt")
 		resetting = true
-		#hurt.play()
+		hurt.play()
 		UI.died()
-		game_over_menu_ = true
-		
-		
-		
+		await get_tree().create_timer(1).timeout
+		can_restart = true
+
+
 func gamereset():
 	var bird = get_tree().current_scene.get_node("bird")
 	var pipes = get_tree().current_scene.get_node("pipes")
