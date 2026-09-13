@@ -94,7 +94,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x4jx1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yev5y")
 text = "PLAY"
 
-[node name="Control" type="Control" parent="." unique_id=355131811]
+[node name="End_menu" type="Control" parent="." unique_id=355131811]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -109,7 +109,7 @@ offset_bottom = 301.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label2" type="Label" parent="Control" unique_id=57215635]
+[node name="Label2" type="Label" parent="End_menu" unique_id=57215635]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.136
@@ -135,7 +135,7 @@ text = "FLAPPY BIRD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="Control" unique_id=1352737308]
+[node name="Label4" type="Label" parent="End_menu" unique_id=1352737308]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.136
@@ -161,7 +161,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Control" unique_id=2143911676]
+[node name="Label3" type="Label" parent="End_menu" unique_id=2143911676]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.136
@@ -182,7 +182,7 @@ text = "High Score:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="Control" unique_id=3519752]
+[node name="Button2" type="Button" parent="End_menu" unique_id=3519752]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.591

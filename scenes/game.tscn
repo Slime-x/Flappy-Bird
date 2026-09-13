@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dqed5qrut7uiy" path="res://assets/PixelOperator-Bold.ttf" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://btrmtphhwu73k" path="res://assets/hurt.wav" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://wv34kyfanal1" path="res://scenes/ui.tscn" id="8_gee14"]
+[ext_resource type="Script" uid="uid://b4g37hopsbokm" path="res://script/ui.gd" id="9_0tnpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("1_iywne")
@@ -226,5 +227,6 @@ uppercase = true
 stream = ExtResource("7_u5sy4")
 
 [node name="UI" parent="." unique_id=641858036 instance=ExtResource("8_gee14")]
+script = ExtResource("9_0tnpc")
 
 [connection signal="timeout" from="pipe_spawner/Timer" to="pipe_spawner" method="_on_timer_timeout"]
