@@ -3,31 +3,31 @@
 [ext_resource type="FontFile" uid="uid://dqed5qrut7uiy" path="res://assets/PixelOperator-Bold.ttf" id="1_nt7q6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtct1"]
-bg_color = Color(0.9863774, 0, 0.016154584, 0.35686275)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.84, 0.7, 0, 0.47058824)
+corner_radius_top_left = 110
+corner_radius_top_right = 110
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 110
 shadow_size = 2
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
-bg_color = Color(0.51, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.9, 0.75, 0, 0.6039216)
+corner_radius_top_left = 110
+corner_radius_top_right = 110
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 110
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yev5y"]
-bg_color = Color(0.84, 0, 0.013999786, 0.47058824)
+bg_color = Color(0.9, 0.75, 0, 0.6039216)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 110
+corner_radius_top_right = 110
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 110
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
@@ -49,6 +49,14 @@ offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="StartMenu" unique_id=1750515343]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -103.0
+offset_right = 330.0
+offset_bottom = 498.0
+color = Color(0, 0, 0, 0.22745098)
+
 [node name="Label" type="Label" parent="StartMenu" unique_id=53178179]
 layout_mode = 1
 anchors_preset = -1
@@ -57,11 +65,14 @@ anchor_top = 0.094000004
 anchor_right = 1.136
 anchor_bottom = 0.256
 offset_left = 0.08800125
-offset_top = -0.036003113
+offset_top = -63.036003
 offset_right = -0.088012695
-offset_bottom = 0.13599396
+offset_bottom = -62.864006
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(5.077789, 4.1858354, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
 theme_override_fonts/font = ExtResource("1_nt7q6")
 theme_override_font_sizes/font_size = 64
 text = "FLAPPY BIRD"
@@ -82,3 +93,110 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qtct1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x4jx1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yev5y")
 text = "PLAY"
+
+[node name="Control" type="Control" parent="." unique_id=355131811]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -301.0
+offset_right = 200.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Control" unique_id=57215635]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.136
+anchor_top = 0.094000004
+anchor_right = 1.136
+anchor_bottom = 0.256
+offset_left = 0.40000153
+offset_top = -0.58800125
+offset_right = 0.22399902
+offset_bottom = -0.41600037
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(5.077789, 4.1858354, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 32
+theme_override_constants/shadow_outline_size = 209
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 64
+text = "FLAPPY BIRD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control" unique_id=1352737308]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.136
+anchor_top = 0.094000004
+anchor_right = 1.136
+anchor_bottom = 0.256
+offset_left = 0.40000153
+offset_top = -69.588
+offset_right = 0.22399902
+offset_bottom = -69.416
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(5.077789, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 32
+theme_override_constants/shadow_outline_size = 209
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 56
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control" unique_id=2143911676]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.136
+anchor_top = 0.094000004
+anchor_right = 1.136
+anchor_bottom = 0.256
+offset_left = 55.4
+offset_top = 205.412
+offset_right = -54.400024
+offset_bottom = 139.88799
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.82, 0.7516666, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 32
+text = "High Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Control" unique_id=3519752]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.591
+anchor_right = 1.0
+anchor_bottom = 0.72300005
+offset_left = 159.0
+offset_top = -30.782013
+offset_right = -162.0
+offset_bottom = -30.79004
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtct1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x4jx1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yev5y")
+text = "↻"

@@ -7,6 +7,14 @@ var game_over = false
 var resetting = false
 var point = 0
 var highScore = 0
+var start_menu = true
+var in_game = false
+var game_over_menu = false
+
+func _input(jump):
+	if Input.is_action_just_pressed("jump"):
+		start_menu = false
+		in_game = true
 
 func _process(_delta):
 	if game_over and not resetting:

@@ -18,4 +18,6 @@ func spawn_grass():
 
 
 func _on_timer_timeout() -> void:
+	if Gamemanager.start_menu:
+		return
 	spawn_pipe()

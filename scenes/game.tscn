@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blhde4qse1eo" path="res://scenes/map.tscn" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://dqed5qrut7uiy" path="res://assets/PixelOperator-Bold.ttf" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://btrmtphhwu73k" path="res://assets/hurt.wav" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://wv34kyfanal1" path="res://scenes/ui.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("1_iywne")
@@ -175,6 +176,7 @@ autostart = true
 [node name="map" type="Node" parent="." unique_id=519929351]
 
 [node name="map" parent="map" unique_id=1966408214 instance=ExtResource("4_lbhrr")]
+position = Vector2(5, 0)
 
 [node name="Control" type="Control" parent="." unique_id=636257430]
 z_index = 2
@@ -200,7 +202,6 @@ theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxTexture_p57ef")
-text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -223,5 +224,7 @@ uppercase = true
 
 [node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1355008471]
 stream = ExtResource("7_u5sy4")
+
+[node name="UI" parent="." unique_id=641858036 instance=ExtResource("8_gee14")]
 
 [connection signal="timeout" from="pipe_spawner/Timer" to="pipe_spawner" method="_on_timer_timeout"]
