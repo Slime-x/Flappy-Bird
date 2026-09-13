@@ -4,7 +4,7 @@ Playable Link: https://slime001.itch.io/flappy-bird
 
 A Flapphy bird clone that i made for HC. <br>
 <h4> HackaTime Link:</h4> 
-https://hackatime.hackclub.com/@slimex/project/flappy-bird
+https://hackatime.hackclub.com/@slimex/project/flappy-bird <br>
 https://hackatime.hackclub.com/@slimex/project/Flappy+Bird
 
 idk why 30min was tracked in a diff project but here is 2 so i sent the link here as well..
