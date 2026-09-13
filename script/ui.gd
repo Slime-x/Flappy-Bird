@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var start: Control = $StartMenu
 @onready var end: Control = $End_menu
 @onready var points: Label = $"../Control/points"
+@onready var game_point: Label = $End_menu/game_point
+@onready var highscore: Label = $End_menu/highscore
 
 func in_game():
 	start.hide()

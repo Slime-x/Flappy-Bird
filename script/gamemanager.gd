@@ -35,6 +35,10 @@ func _process(_delta):
 		resetting = true
 		hurt.play()
 		UI.died()
+		UI.game_point.text = str(point)
+		if point > highScore:
+			highScore = point
+			UI.highscore.text = "High score: " + str(point)
 		await get_tree().create_timer(1).timeout
 		can_restart = true
 
@@ -42,12 +46,9 @@ func _process(_delta):
 func gamereset():
 	var bird = get_tree().current_scene.get_node("bird")
 	var pipes = get_tree().current_scene.get_node("pipes")
-	var hs = get_tree().current_scene.get_node("Control/highscore")
+	var UI = get_tree().current_scene.get_node("UI")
 	bird.position = bird.start_position
 	bird.velocity.y = 0
-	if point > highScore:
-		highScore = point
-		hs.text = "High score: " + str(point)
 	point = 0
 	add_point()
 	for pillers in pipes.get_children():
